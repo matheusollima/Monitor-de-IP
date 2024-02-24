@@ -6,6 +6,8 @@ class host_ip {
  public $host_name;
  public $ip_number;
 
+ public $host_status;
+
 
  public function __construct($id, $name, $number) {
   $this->id_host = $id;
@@ -35,6 +37,14 @@ public function get_id(){
 
  public function get_ip_number() {
     return $this->ip_number;
+ }
+
+ public function set_host_status($host_status){
+   $this->host_status = $host_status;
+ }
+
+ public function get_host_status() {
+   return $this->host_status;
  }
 
 
