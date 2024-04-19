@@ -1,5 +1,5 @@
 <?php 
-include_once('C:\wamp64\www\MonitorDeWifi\Projeto\controller\ControllerHost.php');
+include_once('C:\xampp\htdocs\Projeto\controller\ControllerHost.php');
 
 function listar(){
     $listar = controllerHost::listarHost();
@@ -17,7 +17,6 @@ function listar(){
 
 function deletar($id) {
     $idHost = $id;
-    echo $id;
    if(!$idHost==null){
      controllerHost::deletarHost($idHost);
    }
@@ -27,6 +26,7 @@ function deletar($id) {
 
 if(array_key_exists("botaoDeletar", $_POST)){
     $idDeletar = $_POST['idDeletar'];
+    
     deletar($idDeletar);
     
 }

@@ -1,6 +1,6 @@
 <?php
-include("C:\wamp64\www\MonitorDeWifi\Projeto\controller\ControllerHost.php");
-include("C:\wamp64\www\MonitorDeWifi\Projeto\model\Classes\Host_IP.php");
+//include("C:\wamp64\www\MonitorDeWifi\Projeto\controller\ControllerHost.php");
+include("C:\\xampp\htdocs\Projeto\model\Classes\Host_IP.php");
 function listar(){
     $listar = controllerHost::listarHost();
     
@@ -31,9 +31,8 @@ function alterar($id, $host_name, $ip_number) {
     $alterarObj = new host_ip($idHost, $hostName, $ipNumber);
     controllerHost::alterarHost($alterarObj);
     echo "ALTERAÇÃO FEITA COM SUCESSO";
- }else  
-    echo "ESCOLHA QUAL QUER ALTERAR";
- }  
+    return true;
+ }}
 
 
 ?>

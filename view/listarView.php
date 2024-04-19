@@ -1,5 +1,5 @@
 <?php 
-include('C:\wamp64\www\MonitorDeWifi\Projeto\view\validações\validaListar.php');
+include('C:\xampp\htdocs\Projeto\view\validações\validaListar.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,12 +15,14 @@ include('C:\wamp64\www\MonitorDeWifi\Projeto\view\validações\validaListar.php'
     </style>
     <div name="lista" class="painel" id = "painelLista" >
      <?php
-      listar();  
+      listarLista();  
 
      ?>
 
     </div>
     <div id = "teste"></div>
+
+    <button><a href="Formulario.php">Ínicio</a></button>
 </body>
 </html>
 

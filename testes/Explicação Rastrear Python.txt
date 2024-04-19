@@ -1,0 +1,18 @@
+Claro, vou explicar cada parte do código com palavras simples:
+
+Python
+
+hosts_list = [(x, nm[x]['status']['state']) for x in nm.all_hosts()]
+for host, status in hosts_list:
+    print('{0}:{1}'.format(host, status))
+Código gerado por IA. Examine e use com cuidado. Mais informações em perguntas frequentes.
+Criando uma lista de hosts e estados:
+hosts_list = [...]: Aqui estamos dizendo “vamos fazer uma lista chamada hosts_list”.
+[(x, nm[x]['status']['state']) for x in nm.all_hosts()]: Isso é como uma receita para fazer a lista. Para cada x (que é um nome temporário para cada host encontrado), pegamos o x e o estado dele (nm[x]['status']['state']) e colocamos juntos como um parzinho (chamado de tupla).
+nm.all_hosts(): É como se fosse uma caixa que contém todos os hosts que o Nmap encontrou. Estamos dizendo “para cada coisa dentro dessa caixa, faça o que a receita pede”.
+Passando por cada par na lista:
+for host, status in hosts_list:: Aqui começamos a dizer “para cada parzinho na lista que fizemos, vamos chamar o primeiro de host e o segundo de status”.
+print('{0}:{1}'.format(host, status)): E agora dizemos “mostre para nós o host e o status, mas coloque um : entre eles”. Então, se o host for “123.456.789.0” e o status for “ativo”, ele vai mostrar “123.456.789.0:ativo”.
+Esse código é como uma receita para cozinhar uma lista de todos os computadores que estão ligados numa rede e depois mostrar essa lista para você, com cada computador e se está ligado ou não.
+
+Espero que isso tenha ajudado a entender o código! Se tiver mais alguma dúvida, pode perguntar.

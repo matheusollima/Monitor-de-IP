@@ -8,13 +8,14 @@
 </head>
 <body>
   <div class = "painel">
-    <form action="" method="post">
+    <form action="validações/validaCadastrar.php" method="post">
     <label for="nome">Nome: </label>
     <input type="text" name="nome" id="nome"><br>
     <label for="ip">IP: </label>
     <input type="text" name="ip" id="ip">
     <input type="submit" value="Salvar" name="salvar">
   </form>
+  <button><a href="Formulario.php">Ínicio</a></button>
   </div>  
 </body>
 </html>

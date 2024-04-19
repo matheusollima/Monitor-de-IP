@@ -1,5 +1,5 @@
 <?php 
-include('../model/DAO/daoHost_IP.php');
+include_once('C:\xampp\htdocs\Projeto\model\DAO\daoHost_IP.php');
 
 class controllerHost {
 

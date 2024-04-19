@@ -15,36 +15,45 @@ public function __construct($novoObj){
 
 }
 
-
 public function novoHost($novoObj){
-    include("../model/conexao/conexao.php");
+    include("C:\\xampp\htdocs\Projeto\model\conexao\conexao.php");
     //$adicionarHost = "INSERT INTO hosts (1, host_name, ip_number) VALUES (1, $this->host_name, $this->ip_number); "
   
   $inserir = $novaConexao->query("INSERT INTO hosts(host_name, ip_number) VALUES ('$this->host_name', '$this->ip_number')");
-   echo "SUCESSO!";
+ 
  }
 
 public static function listarHost(){
-  include("../model/conexao/conexao.php");
+    include("C:\\xampp\htdocs\Projeto\model\conexao\conexao.php");
   
-$selecionar = "SELECT * FROM hosts";
-$lista = $novaConexao->query($selecionar);
+    $selecionar = "SELECT * FROM hosts";
+    $lista = $novaConexao->query($selecionar);
+    
+    if($lista->num_rows == 0){
+      echo "Nenhum nome na lista";
+    }
+    elseif($lista->num_rows >0) {
+      
+      $i = 0;
+     $listar = [];
 
-  if($lista->num_rows >0) {
-    $listar = [];
+    
+      
     while($row = $lista->fetch_assoc()){
       //echo "<br> ID: ". $row['id'] .  "<br> Nome: " . $row['host_name']. "<br>" . "Número IP: ". $row['ip_number'] . "<br>";
       
-      $listar[] =  "<br> ID: ". $row['id'] .  "<br> Nome: " . $row['host_name']. "<br>" . "Número IP: ". $row['ip_number'] . "<br>"; 
-    
+      $listar[] = [ "ID"=>$row['id'],"Nome"=>$row['host_name'],"NumeroIP"=>$row['ip_number'] ];
+
+     
+     
     }
-    
-}
-return $listar;
+    return $listar;
+    }
+     
 }
 
 public function alterarHost($alterarObj){
-  include("../model/conexao/conexao.php");
+  include("C:\\xampp\htdocs\Projeto\model\conexao\conexao.php");
   $alterar = $alterarObj;
   $this->id_host = $alterar->get_id();
   $this->host_name = $alterar->get_host_name();
@@ -63,10 +72,8 @@ public function alterarHost($alterarObj){
 
 }
 
-
-
 public static function deletarHost($id){
-  include("../model/conexao/conexao.php");
+  include("C:\\xampp\htdocs\Projeto\model\conexao\conexao.php");
  $idHost = $id;
  $verificarSQL = "SELECT * FROM  hosts WHERE id = '$idHost';";
  $verificar = $novaConexao->query($verificarSQL);

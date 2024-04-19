@@ -9,12 +9,26 @@
 <body>
     <div class = "painel">
 
-      <button name ="rastrear"><a href="rastrearView.php">Rastrear</a></button>
+      <!---<button name ="rastrear"><a href="rastrearView.php">Rastrear</a></button>-->
+      
+      <form action="" method="post">
       <button name = "cadastrar"><a href="cadastrarView.php">Cadastrar</a></button>
-      <button name = "listar"><a href = "listarView.php">Listar</a></button>
-      <button name = "alterar"><a href = "alterarView.php">Alterar</a></button>
-      <button name = "excluir"><a href="deletarView.php">Deletar</a></button>
+      <button name = "listar"><a href = "listarView.php">Listar</a></button>  
+      <button name= "rastrear">Rastrear</button>
+      </form>
+      <?php 
+   //include('C:\wamp64\www\MonitorDeWifi\Projeto\frontend\monitordewifi\src\app\app.component.html');
+   include('C:\xampp\htdocs\Projeto\testes\testeRastrear.php');
+
+
+   if(array_key_exists('rastrear', $_POST)){
+    echo "<br>";
+    abrirCMD();
+   }
+  ?>  
 
     </div>
+
+
 </body>
 </html>
